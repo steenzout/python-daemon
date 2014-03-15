@@ -7,7 +7,7 @@ from pip.req import parse_requirements
 from setuptools import find_packages, setup
 
 
-setup(name='python-daemon',
+setup(name='python-daemon2',
       version=version.__version__,
       description='Python daemon package.',
       author='Sander Marechal, David Mytton, Pedro Salgado',
