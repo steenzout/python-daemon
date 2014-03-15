@@ -66,7 +66,7 @@ class Daemon(object):
                 sys.exit(0)
         except OSError, e:
             sys.stderr.write(
-                "fork #2 failed: %d (%s)\n" % (e.errno, e.strerror))
+                'fork #2 failed: %d (%s)\n' % (e.errno, e.strerror))
             sys.exit(1)
 
         if sys.platform != 'darwin':  # This block breaks on OS X
@@ -85,8 +85,9 @@ class Daemon(object):
 
         def sigtermhandler(signum, frame):
             self.daemon_alive = False
-            signal.signal(signal.SIGTERM, sigtermhandler)
-            signal.signal(signal.SIGINT, sigtermhandler)
+
+        signal.signal(signal.SIGTERM, sigtermhandler)
+        signal.signal(signal.SIGINT, sigtermhandler)
 
         if self.verbose >= 1:
             print "Started"
@@ -106,7 +107,7 @@ class Daemon(object):
         """
 
         if self.verbose >= 1:
-            print "Starting..."
+            print 'Starting...'
 
         # Check for a pidfile to see if the daemon already runs
         try:
@@ -119,7 +120,7 @@ class Daemon(object):
             pid = None
 
         if pid:
-            message = "pidfile %s already exists. Is it already running?\n"
+            message = 'pidfile %s already exists. Is it already running?\n'
             sys.stderr.write(message % self.pidfile)
             sys.exit(1)
 
@@ -133,13 +134,13 @@ class Daemon(object):
         """
 
         if self.verbose >= 1:
-            print "Stopping..."
+            print 'Stopping...'
 
         # Get the pid from the pidfile
         pid = self.get_pid()
 
         if not pid:
-            message = "pidfile %s does not exist. Not running?\n"
+            message = 'pidfile %s does not exist. Not running?\n'
             sys.stderr.write(message % self.pidfile)
 
             # Just to be sure. A ValueError might occur if the PID file is
@@ -160,7 +161,7 @@ class Daemon(object):
                     os.kill(pid, signal.SIGHUP)
         except OSError, err:
             err = str(err)
-            if err.find("No such process") > 0:
+            if err.find('No such process') > 0:
                 if os.path.exists(self.pidfile):
                     os.remove(self.pidfile)
             else:
@@ -168,7 +169,7 @@ class Daemon(object):
                 sys.exit(1)
 
         if self.verbose >= 1:
-            print "Stopped"
+            print 'Stopped'
 
     def restart(self):
         """
