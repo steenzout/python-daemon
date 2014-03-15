@@ -55,13 +55,14 @@ you may wish to use the [sched][1] module to execute code repeatedly ([example][
 
 
 ## Changelog
-13th Aug 2010 (David Mytton <david@boxedice.com>
+
+2010 Aug 13 (David Mytton <david@boxedice.com>
     - fixed unhandled exception if PID file is empty
 
-11th Mar 2009 (David Mytton <david@boxedice.com>)
+2009 Mar 11 (David Mytton <david@boxedice.com>)
     - fixed problem with daemon exiting on Python 2.4 (before SystemExit was part of the Exception base)
 
-23rd Jan 2009 (David Mytton <david@boxedice.com>)
+2009 Jan 23 (David Mytton <david@boxedice.com>)
     - replaced hard coded '/dev/null in __init__ with os.devnull
     - added OS check to conditionally remove code that doesn't work on OS X
     - added output to console on completion
