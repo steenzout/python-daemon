@@ -1,0 +1,3 @@
+include *.markdown
+recursive-exclude src *.pyc
+recursive-exclude src *.pyo
