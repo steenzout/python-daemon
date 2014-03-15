@@ -56,6 +56,11 @@ you may wish to use the [sched][1] module to execute code repeatedly ([example][
 
 ## Changelog
 
+2014 Mar 15
+    - converted module into package
+    - added pytest.ini, LICENSE.txt, MANIFEST.in, .gitignore, pip requirements files and setup.py file
+    - cleanup of main Daemon class
+
 2010 Aug 13 (David Mytton <david@boxedice.com>
     - fixed unhandled exception if PID file is empty
 
